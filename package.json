@@ -1,0 +1,11 @@
+{
+    "devDependencies":{
+        "cypress":"^12.17.4"
+    },
+    "scripts":{
+        "cypress":"cypress open"
+    },
+    "dependencies":{
+        "lodash":"^4.17.21"
+    }
+}
