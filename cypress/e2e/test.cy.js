@@ -12,7 +12,7 @@ describe('prueba de busqueda de carros', () => {
     cy.get('#ui-id-1 li')
     .contains('Aeropuerto de Barcelona, Barcelona, España') 
     .click();
-    
+
     //Habilita la opción de entrega en otra localidad
     cy.get('.switch__slider.switch__slider--round').first()
       .click();
@@ -52,6 +52,22 @@ describe('prueba de busqueda de carros', () => {
     .find('.day-item') 
     .contains('22') 
     .click();
+
+    //Ingresa al modal del horario, dando clic a el timepicker
+    cy.get('[data-modal=".timepicker-car"]').first() 
+    .click({ force: true });
+
+     // Selecciona la hora de recogida 
+    cy.get('[data-time-options="qs-hours-pickup"]')
+    .contains('13:00') 
+    .click();
+    // Selecciona la hora de devolución
+    cy.get('[data-time-options="qs-hours-return"]')
+    .contains('09:00') 
+    .click();
+
+
+
 
     //Clic en el botón buscar
     cy.get('.quicksearch__button.button-default--qs').first()
